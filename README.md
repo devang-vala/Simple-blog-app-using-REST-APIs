@@ -13,8 +13,8 @@ A simple blog application inspired by Quora, built using **Express.js, EJS, and 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/quora-blog-app.git
-   cd quora-blog-app
+   git clone https://github.com/devang-vala/Simple-blog-app-using-REST-APIs.git
+   cd Simple-blog-app-using-REST-APIs
    ```
 
 2. Install dependencies:
