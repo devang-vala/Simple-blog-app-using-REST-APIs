@@ -44,8 +44,7 @@ A simple blog application inspired by Quora, built using **Express.js, EJS, and 
 
 ## Tech Stack
 - **Backend**: Node.js, Express.js
-- **Frontend**: EJS, Bootstrap
-- **Database**: MongoDB (or JSON files for simplicity)
+- **Frontend**: EJS, CSS
 
 ## Contributing
 Feel free to fork this repository and contribute by submitting a pull request.
