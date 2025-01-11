@@ -3,7 +3,6 @@
 A simple blog application inspired by Quora, built using **Express.js, EJS, and REST APIs**.
 
 ## Features
-- User authentication (Signup/Login)
 - Create, read, update, and delete blog posts
 - Commenting system
 - RESTful API for blog management
