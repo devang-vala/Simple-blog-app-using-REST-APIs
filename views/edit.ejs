@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post - Quora-Style Blog</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Quora-Style Blog</h1>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="edit-post-container">
+            <h2 class="edit-post-title">Edit your post</h2>
+            <div class="post-meta">
+                <div class="user-info">
+                    <div class="avatar">
+                        <%= post.username.charAt(0).toUpperCase() %>
+                    </div>
+                    <div class="user-meta">
+                        <div class="username">@<%= post.username %></div>
+                        <div class="post-id">Post ID: <%= post.id %></div>
+                    </div>
+                </div>
+            </div>
+            <form action="/posts/<%= post.id %>?_method=PATCH" method="post" class="edit-post-form">
+                <textarea name="content" placeholder="Enter new content" class="edit-post-textarea"><%= post.content %></textarea>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Update Post</button>
+                    <a href="/" class="cancel-btn">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
+

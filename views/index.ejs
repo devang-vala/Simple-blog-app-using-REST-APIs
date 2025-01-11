@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quora-Style Blog</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Quora-Style Blog</h1>
+            </div>
+            <div class="nav-links">
+                <a href="/posts/new" class="create-post-btn">Create Post</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="feed">
+            <% for(post of posts){ %>
+                <article class="post-card">
+                    <div class="post-header">
+                        <div class="user-info">
+                            <div class="avatar">
+                                <%= post.username.charAt(0).toUpperCase() %>
+                            </div>
+                            <div class="user-meta">
+                                <div class="username">@<%= post.username %></div>
+                                <div class="post-date">Posted on May 15</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="post-content">
+                        <p><%= post.content %></p>
+                    </div>
+
+                    <div class="post-actions">
+                        <div class="action-buttons">
+                            <a href="/posts/<%= post.id %>" class="action-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                                <span>See in Detail</span>
+                            </a>
+                            <a href="/posts/<%= post.id %>/edit" class="action-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                </svg>
+                                <span>Edit</span>
+                            </a>
+                            <form action="/posts/<%= post.id %>?_method=DELETE" method="post" class="delete-form">
+                                <button type="submit" class="action-btn delete">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                    <span>Delete</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </article>
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>
+
